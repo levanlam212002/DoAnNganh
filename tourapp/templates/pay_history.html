@@ -1,0 +1,29 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}Trang chủ{% endblock %}
+
+{% block content %}
+
+<h1 class="tieudelog">LỊCH SỬ THANH TOÁN</h1>
+
+<div class="lsthanhtoan">
+    <table class="tableStyle">
+    <tr>
+        <th>TÊN</th>
+        <th>EMAIL</th>
+        <th>SỐ ĐIỆN THOẠI</th>
+        <th>TỔNG TIỀN</th>
+    </tr>
+    {% for p in bills %}
+    <tr>
+        <td>{{p.KhachHang.TenKH}}</td>
+        <td>{{p.KhachHang.Email}}</td>
+        <td>+84 {{p.KhachHang.SDT}}</td>
+        <td>{{p.TongTien}}$</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+
+{% endblock %}
